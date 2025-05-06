@@ -12,6 +12,7 @@ try:
     response.raise_for_status()
 
     result = response.json()
+    
 
     # Display JSON primary keys
     print("Data:")
@@ -24,6 +25,7 @@ try:
 
     for i, record in enumerate(records, start=1):
         print(f" {i}. {record}")
+        
 
 except requests.exceptions.Timeout:
     print("The request has expired. Try again later.")
@@ -32,8 +34,15 @@ except requests.exceptions.RequestException as e:
 
 
 # Data cleaning: I will exclude the "Minutes5DK" from the ingestion, because I only want UTC time zone
+data_filtered = []
 
-df = pd.DataFrame(data=records)
+for record in records:
+    filtered = {
+        "MinutesUTC": record["Minutes5UTC"],
+        "Price_area": record["PriceArea"],
+        "CO2_emission": record["CO2Emission"]
+    }
+    data_filtered.append(filtered)
 
-df = df.drop(columns="Minutes5DK")
-print(df)
+print("========== Data Filtered ==========")
+print(data_filtered)

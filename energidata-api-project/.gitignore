@@ -1,0 +1,13 @@
+# Oculta variáveis secretas
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Ambientes virtuais (caso você use)
+venv/
+.venv/
+
+# Configs locais de IDE
+.vscode/
