@@ -1,5 +1,5 @@
 import requests
-import pandas as pd
+
 
 
 # getting data from API
