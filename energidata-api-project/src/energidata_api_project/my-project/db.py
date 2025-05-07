@@ -12,9 +12,9 @@ password = os.getenv("DB_PASSWORD")
 
 # Getting the data from "ingestor.py" file
 data_filtered = get_filtered_data()
-# transform the data into a sequence of tuples
-data_to_insert = []
 
+# Transform the data into a sequence of tuples, so we can use executemany() function from psycopg2
+data_to_insert = []
 for d in data_filtered:
     try:
         data_to_insert.append((
