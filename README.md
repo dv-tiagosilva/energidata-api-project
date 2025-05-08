@@ -20,7 +20,7 @@ This project is a simple pipeline for ingesting CO2 emission data from a Denmark
 ## 🗃️ Database
 
 - **System**: PostgreSQL
-- **Table**: `co2_emissions`
+- **Table**: `energi_db`
 - **Schema**:
 
 | Column        | Type      | Description                |
